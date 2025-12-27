@@ -7,6 +7,16 @@ const Projects = () => {
 
     const projects = [
         {
+            id: 3,
+            title: "CVT Belt Temperature Sensor",
+            role: "Embedded Systems & Design",
+            desc: "Thermal monitoring system for Baja SAE racing vehicle.",
+            longDesc: "Developed C firmware (STM32) to interface an MLX90614 IR sensor via I2C for continuous belt temperature tracking. Integrated with the vehicle's Rear ECU for telemetry and dashboard visualization. Designed a custom mounting bracket in SolidWorks and validated sensor accuracy via dynamometer testing.",
+            tags: ["C", "STM32", "SolidWorks", "I2C", "PCB Design"],
+            images: ["/cvt_1.png", "/cvt_2.png"],
+            link: "https://github.com/aleksandar-filipovic1"
+        },
+        {
             id: 1,
             title: "Minesweeper Python Project",
             role: "Software Development",
@@ -24,16 +34,6 @@ const Projects = () => {
             longDesc: "Designed and programmed an automated robotic claw using Arduino (C). Implemented precise motor control logic for gripping and release mechanisms. Prototyped and refined the mechanical structure using Fusion 360 for 3D modeling.",
             tags: ["C", "Arduino", "Fusion 360", "Motor Control"],
             images: ["/claw_1.png", "/claw_2.png"],
-            link: "https://github.com/aleksandar-filipovic1"
-        },
-        {
-            id: 3,
-            title: "CVT Belt Temperature Sensor",
-            role: "Embedded Systems & Design",
-            desc: "Thermal monitoring system for Baja SAE racing vehicle.",
-            longDesc: "Developed C firmware (STM32) to interface an MLX90614 IR sensor via I2C for continuous belt temperature tracking. Integrated with the vehicle's Rear ECU for telemetry and dashboard visualization. Designed a custom mounting bracket in SolidWorks and validated sensor accuracy via dynamometer testing.",
-            tags: ["C", "STM32", "SolidWorks", "I2C", "PCB Design"],
-            images: ["/cvt_1.png", "/cvt_2.png"],
             link: "https://github.com/aleksandar-filipovic1"
         }
     ];
