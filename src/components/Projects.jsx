@@ -85,64 +85,67 @@ const Projects = () => {
 
 
 
-            <AnimatePresence>
-                {selectedProject && createPortal(
-                    <>
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            onClick={() => setSelectedProject(null)}
-                            className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100]"
-                        />
-                        <div className="fixed inset-0 flex items-center justify-center z-[100] px-4 pointer-events-none">
+            {createPortal(
+                <AnimatePresence>
+                    {selectedProject && (
+                        <>
                             <motion.div
-                                layoutId={`card-${selectedProject.id}`}
-                                className="w-full max-w-3xl md:max-w-5xl bg-slate-800 border border-slate-600 rounded-2xl p-6 md:p-8 shadow-2xl pointer-events-auto relative overflow-y-auto max-h-[90vh]"
-                            >
-                                <button
-                                    onClick={(e) => { e.stopPropagation(); setSelectedProject(null); }}
-                                    className="absolute top-4 right-4 p-2 bg-slate-900 rounded-full text-slate-400 hover:text-white transition-colors z-10"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                onClick={() => setSelectedProject(null)}
+                                className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100]"
+                                key="backdrop"
+                            />
+                            <div className="fixed inset-0 flex items-center justify-center z-[100] px-4 pointer-events-none" key="modal-container">
+                                <motion.div
+                                    layoutId={`card-${selectedProject.id}`}
+                                    className="w-full max-w-3xl md:max-w-5xl bg-slate-800 border border-slate-600 rounded-2xl p-6 md:p-8 shadow-2xl pointer-events-auto relative overflow-y-auto max-h-[90vh]"
                                 >
-                                    <X size={20} />
-                                </button>
+                                    <button
+                                        onClick={(e) => { e.stopPropagation(); setSelectedProject(null); }}
+                                        className="absolute top-4 right-4 p-2 bg-slate-900 rounded-full text-slate-400 hover:text-white transition-colors z-10"
+                                    >
+                                        <X size={20} />
+                                    </button>
 
-                                {selectedProject.video ? (
-                                    <div className="w-full rounded-xl overflow-hidden mb-8 bg-black">
-                                        <video
-                                            src={selectedProject.video}
-                                            autoPlay
-                                            loop
-                                            muted
-                                            playsInline
-                                            className="w-full h-64 md:h-96 object-cover mx-auto"
-                                        />
-                                    </div>
-                                ) : selectedProject.images ? (
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                                        {selectedProject.images.map((img, idx) => (
-                                            <img key={idx} src={img} alt={`${selectedProject.title} ${idx + 1}`} className="w-full h-64 md:h-80 rounded-xl object-cover" />
-                                        ))}
-                                    </div>
-                                ) : (
-                                    <div className={`w-full h-48 md:h-64 rounded-xl ${selectedProject.image} mb-8 flex items-center justify-center`}>
-                                        <span className="text-slate-400">Project Demo / Screenshot</span>
-                                    </div>
-                                )}
+                                    {selectedProject.video ? (
+                                        <div className="w-full rounded-xl overflow-hidden mb-8 bg-black">
+                                            <video
+                                                src={selectedProject.video}
+                                                autoPlay
+                                                loop
+                                                muted
+                                                playsInline
+                                                className="w-full h-64 md:h-96 object-cover mx-auto"
+                                            />
+                                        </div>
+                                    ) : selectedProject.images ? (
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                                            {selectedProject.images.map((img, idx) => (
+                                                <img key={idx} src={img} alt={`${selectedProject.title} ${idx + 1}`} className="w-full h-64 md:h-80 rounded-xl object-cover" />
+                                            ))}
+                                        </div>
+                                    ) : (
+                                        <div className={`w-full h-48 md:h-64 rounded-xl ${selectedProject.image} mb-8 flex items-center justify-center`}>
+                                            <span className="text-slate-400">Project Demo / Screenshot</span>
+                                        </div>
+                                    )}
 
-                                <h3 className="text-3xl font-bold text-white mb-2">{selectedProject.title}</h3>
-                                <div className="text-primary font-medium mb-6">{selectedProject.role}</div>
+                                    <h3 className="text-3xl font-bold text-white mb-2">{selectedProject.title}</h3>
+                                    <div className="text-primary font-medium mb-6">{selectedProject.role}</div>
 
-                                <div className="prose prose-invert max-w-none">
-                                    <p className="text-slate-300 mb-6 text-lg">{selectedProject.desc}</p>
-                                    <p className="text-slate-400 leading-relaxed mb-8">{selectedProject.longDesc}</p>
-                                </div>
-                            </motion.div>
-                        </div>
-                    </>,
-                    document.body
-                )}
-            </AnimatePresence>
+                                    <div className="prose prose-invert max-w-none">
+                                        <p className="text-slate-300 mb-6 text-lg">{selectedProject.desc}</p>
+                                        <p className="text-slate-400 leading-relaxed mb-8">{selectedProject.longDesc}</p>
+                                    </div>
+                                </motion.div>
+                            </div>
+                        </>
+                    )}
+                </AnimatePresence>,
+                document.body
+            )}
         </section>
     );
 };
