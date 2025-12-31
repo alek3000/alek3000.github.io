@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { createPortal } from 'react-dom';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { useState } from 'react';
 
@@ -28,12 +29,13 @@ const Projects = () => {
         },
         {
             id: 2,
-            title: "Arduino Automated Claw",
-            role: "Robotics & Firmware",
-            desc: "C-based precise motor control for a robotic claw.",
-            longDesc: "Designed and programmed an automated robotic claw using Arduino (C). Implemented precise motor control logic for gripping and release mechanisms. Prototyped and refined the mechanical structure using Fusion 360 for 3D modeling.",
-            tags: ["C", "Arduino", "Fusion 360", "Motor Control"],
-            images: ["/claw_1.png", "/claw_2.png"],
+            title: "FPGA Tron Game",
+            role: "C, Nios V (RISC-V), VGA, DE10-Lite",
+            desc: "High-performance arcade game on a DE10-Lite FPGA.",
+            longDesc: "Developed a high-performance arcade game on a DE10-Lite FPGA, utilizing the Nios V (RISC-V) soft-core processor to handle real-time game logic and collision detection in C. Implemented hardware interrupts for precise input handling and utilized bit masking to efficiently manipulate VGA memory-mapped control registers. Designed a custom double-buffering rendering pipeline to eliminate screen tearing and ensure smooth 60Hz visual performance.",
+            tags: ["C", "Nios V", "RISC-V", "VGA", "FPGA"],
+            images: ["/tron_thumb.png"],
+            video: "/tronexample.MOV",
             link: "https://github.com/aleksandar-filipovic1"
         }
     ];
@@ -81,17 +83,19 @@ const Projects = () => {
                 ))}
             </div>
 
+
+
             <AnimatePresence>
-                {selectedProject && (
+                {selectedProject && createPortal(
                     <>
                         <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedProject(null)}
-                            className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-50"
+                            className="fixed inset-0 bg-slate-900/80 backdrop-blur-sm z-[100]"
                         />
-                        <div className="fixed inset-0 flex items-center justify-center z-50 px-4 pointer-events-none">
+                        <div className="fixed inset-0 flex items-center justify-center z-[100] px-4 pointer-events-none">
                             <motion.div
                                 layoutId={`card-${selectedProject.id}`}
                                 className="w-full max-w-3xl md:max-w-5xl bg-slate-800 border border-slate-600 rounded-2xl p-6 md:p-8 shadow-2xl pointer-events-auto relative overflow-y-auto max-h-[90vh]"
@@ -103,7 +107,18 @@ const Projects = () => {
                                     <X size={20} />
                                 </button>
 
-                                {selectedProject.images ? (
+                                {selectedProject.video ? (
+                                    <div className="w-full rounded-xl overflow-hidden mb-8 bg-black">
+                                        <video
+                                            src={selectedProject.video}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="w-full h-64 md:h-96 object-cover mx-auto"
+                                        />
+                                    </div>
+                                ) : selectedProject.images ? (
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                                         {selectedProject.images.map((img, idx) => (
                                             <img key={idx} src={img} alt={`${selectedProject.title} ${idx + 1}`} className="w-full h-64 md:h-80 rounded-xl object-cover" />
@@ -124,7 +139,8 @@ const Projects = () => {
                                 </div>
                             </motion.div>
                         </div>
-                    </>
+                    </>,
+                    document.body
                 )}
             </AnimatePresence>
         </section>
