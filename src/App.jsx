@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './components/Header';
-import Galaxy from './components/Galaxy';
+import GalaxyBackground from './components/GalaxyBackground';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -27,15 +27,7 @@ function App() {
 
   return (
     <div className="text-slate-200 font-sans selection:bg-primary/30 scroll-smooth">
-      <div className="fixed inset-0 -z-10 bg-slate-900">
-        <Galaxy
-          density={0.7}
-          rotationSpeed={0.05}
-          repulsionStrength={0.5}
-          starSpeed={0.2}
-          speed={0.7}
-        />
-      </div>
+      <GalaxyBackground />
       <Header />
 
       {/* Scroll Overlay for legibility */}
