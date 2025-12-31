@@ -26,7 +26,7 @@ const Hero = () => {
                 transition={{ duration: 0.8 }}
                 className="w-64 h-64 md:w-96 md:h-96 rounded-full border-4 border-primary shadow-[0_0_30px_rgba(14,165,233,0.5)] mb-8 overflow-hidden bg-slate-800 flex items-center justify-center"
             >
-                <img src="/portrait_2025.JPG" alt="Aleksandar Filipovic" className="w-full h-full object-cover" />
+                <img src="/portrait_2025.JPG" alt="Aleksandar Filipovic" className="w-full h-full object-cover scale-125" />
             </motion.div>
 
             <motion.h1

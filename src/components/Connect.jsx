@@ -39,7 +39,7 @@ const Connect = () => {
                 </div>
             </div>
 
-            <footer className="w-screen border-t border-slate-800 pt-8 pb-8 text-slate-500 text-center mt-32 bg-slate-900/50 backdrop-blur-sm self-end">
+            <footer className="w-screen border-t border-slate-800 pt-8 pb-8 px-4 text-slate-500 text-center mt-32 bg-slate-900/50 backdrop-blur-sm self-end">
                 “The most beautiful thing we can experience is the mysterious.” — Einstein
             </footer>
         </section>

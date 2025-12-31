@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Header from './components/Header';
-import GalaxyBackground from './components/GalaxyBackground';
+import Aurora from './components/Aurora';
 import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
@@ -27,7 +27,12 @@ function App() {
 
   return (
     <div className="text-slate-200 font-sans selection:bg-primary/30 scroll-smooth">
-      <GalaxyBackground />
+      <div className="fixed inset-0 -z-10 bg-slate-900">
+        <Aurora
+          colorStops={['#66d9ff', '#3b75a1', '#0a1143']}
+          speed={0.5}
+        />
+      </div>
       <Header />
 
       {/* Scroll Overlay for legibility */}
