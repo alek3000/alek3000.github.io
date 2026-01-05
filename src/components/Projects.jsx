@@ -36,7 +36,17 @@ const Projects = () => {
             tags: ["C", "Nios V", "RISC-V", "VGA", "FPGA"],
             images: ["/tron_thumb.png"],
             video: "/tronexample.MOV",
-            link: "https://github.com/aleksandar-filipovic1"
+            link: "https://github.com/alek3000/de10lite-tron/blob/main/tron.c"
+        },
+        {
+            id: 4,
+            title: "FPGA Digital Combination Lock System",
+            role: "Hardware & Digital Design",
+            desc: "Secure, programmable digital combination lock on an FPGA using SystemVerilog.",
+            longDesc: "Implemented a secure digital combination lock on a MAX10 FPGA (DE10-Lite) using SystemVerilog. The system features a custom 6-digit programmable passcode, an 8-state Finite State Machine (FSM) for logic control, and real-time visual feedback via 7-segment displays. It interfaces with an external keypad using a custom shift-register module and includes debounce logic for reliable input validation.",
+            tags: ["SystemVerilog", "FPGA", "FSM", "Digital Logic", "MAX10"],
+            images: ["/fpga_demo.png", "/fpga_keypad.png"],
+            link: "https://github.com/alek3000/FPGA-SafeLock/blob/main/combo.sv"
         }
     ];
 
@@ -132,7 +142,18 @@ const Projects = () => {
                                         </div>
                                     )}
 
-                                    <h3 className="text-3xl font-bold text-white mb-2">{selectedProject.title}</h3>
+                                    <div className="flex justify-between items-start mb-6">
+                                        <h3 className="text-3xl font-bold text-white max-w-[70%]">{selectedProject.title}</h3>
+                                        <a
+                                            href={selectedProject.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-glow text-slate-900 rounded-lg transition-colors font-bold shadow-lg shadow-primary/20 shrink-0"
+                                        >
+                                            <Github size={20} />
+                                            <span>See Code</span>
+                                        </a>
+                                    </div>
                                     <div className="text-primary font-medium mb-6">{selectedProject.role}</div>
 
                                     <div className="prose prose-invert max-w-none">
