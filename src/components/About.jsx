@@ -19,12 +19,13 @@ const About = () => {
             >
                 <h2 className="text-3xl font-bold mb-8 text-white"><span className="text-primary">About</span> Me</h2>
                 <p className="text-slate-300 leading-relaxed text-lg mb-6">
-                    I'm an Electrical Engineering student at UBC (expected 2028) with a strong passion for Mechatronics and Embedded Systems.
-                    Currently, I'm diving deep into hardware-software integration with the UBC BAJA racing team, refactoring CANBus protocols and designing PCBs.
+                    I'm an Electrical Engineering student at UBC with a deep focus on software engineering and embedded systems. My passion lies in building innovative technology that pushes boundaries, bridging the gap between low-level hardware control and high-level software architecture.
+                </p>
+                <p className="text-slate-300 leading-relaxed text-lg mb-6">
+                    During my recent Software Engineering internship at Rivian and Volkswagen Group Technologies, I engineered Software-in-the-Loop (SIL) frameworks and architected robust automotive network interfaces to validate critical charging ECUs. I thrive on solving complex technical challenges, whether that means spoofing real-world payloads for system validation at Rivian or optimizing CANBus protocols and designing PCBs for the UBC BAJA racing team.
                 </p>
                 <p className="text-slate-300 leading-relaxed text-lg">
-                    With a CGPA of 85.6% and hands-on internship experience in electrical design at MCW Consultants, I thrive on solving complex technical challenges.
-                    My toolkit includes C, Python, Altium Designer, and STM32, but I'm always eager to learn more.
+                    With a CGPA of 83% (Dean's Honour List), I am constantly exploring the intersection of modern software development and hardware. My toolkit includes C/C++, Python, Pytest, Linux Kernel networking, and STM32 micro-controllers, and I'm always eager to dive into new, transformative technologies.
                 </p>
             </motion.div>
         </section>
