@@ -30,7 +30,7 @@ const Connect = () => {
                     </a>
 
                     {/* Resume */}
-                    <a href="/AFilipovic_Resume2025.pdf" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group">
+                    <a href="/afilipovic_resume2027.pdf" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-4 group">
                         <div className="p-6 bg-slate-800 rounded-2xl border border-slate-700 group-hover:border-primary group-hover:shadow-[0_0_30px_rgba(14,165,233,0.3)] transition-all duration-300">
                             <div className="w-12 h-12 flex items-center justify-center font-bold text-2xl text-slate-300 group-hover:text-primary border-2 border-slate-500 group-hover:border-primary rounded-lg transition-colors">CV</div>
                         </div>

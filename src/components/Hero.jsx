@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 const Hero = () => {
     const [text, setText] = useState('');
-    const fullText = "Electrical Engineering Student | Embedded Systems | PCB Design";
+    const fullText = "Electrical Engineering Student | Embedded Systems | Software Developer";
     const [index, setIndex] = useState(0);
 
     useEffect(() => {

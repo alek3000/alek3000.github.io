@@ -3,6 +3,12 @@ import { motion } from 'framer-motion';
 const Experience = () => {
     const experiences = [
         {
+            year: "May 2026 - Dec 2026",
+            role: "Software Engineering Intern",
+            company: "Rivian and Volkswagen Group Technologies",
+            description: "Engineered SIL frameworks in Pytest to simulate charging sessions and spoof 100+ payloads. Developed automated load-strain tests for ECUs over Ethernet. Architected a Linux VLAN tagging interface with TCAM switch rules, reducing latency by 20%. Resolved 20+ communication bug tickets using CANalyzer."
+        },
+        {
             year: "Sept 2025 - Present",
             role: "Mechatronics Sub-Team",
             company: "UBC BAJA, BAJA SAE",
